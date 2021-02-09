@@ -1,6 +1,7 @@
-import leetcode.合并两个有序链表.ListNode;
+
 
 public class leetcode2 {
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
     ListNode l=new ListNode();
     int num=0;//进位标志
@@ -22,6 +23,7 @@ public class leetcode2 {
     }
 
     public static void main(String[] args) {
-
+        System.out.println("无");
     }
-}
+    }
+

@@ -1,3 +1,4 @@
+
 public class leetcode1 {
     public int[] twoSum(int[] nums, int target) {  //暴力破解
         int[] a=new int[2];

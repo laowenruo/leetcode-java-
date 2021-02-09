@@ -1,10 +1,5 @@
 import javahomework.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
 public class leetcode101 {
 //    List<Integer> list=new ArrayList<>();
 //    public void bianli(TreeNode root){

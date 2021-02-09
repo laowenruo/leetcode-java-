@@ -1,10 +1,4 @@
-import leetcode.合并两个有序链表.ListNode;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -28,4 +22,7 @@ public class leetcode448 {
         return list;
     }
 
+    public static void main(String[] args) {
+        System.out.println("测试");
+    }
 }
