@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class offer119 {
+public class offer119 {  //添加注释
     public List<Integer> getRow(int rowIndex) {
         List<Integer> list=new ArrayList<>();
         int[][] a=new int[rowIndex+1][];
