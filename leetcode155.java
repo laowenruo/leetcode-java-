@@ -29,5 +29,6 @@ public class leetcode155 {
 
         public int getMin() {
             return min;
-        }}
+        }
+    }
 }
