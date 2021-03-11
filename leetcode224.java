@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Stack;
@@ -8,6 +9,7 @@ public class leetcode224 {
     class Solution {
         public int calculate(String s) {
             Deque<Integer> ops = new LinkedList<Integer>();
+            Deque<Integer> ops1 = new ArrayDeque<>();
             ops.push(1);
             int sign = 1;
 
