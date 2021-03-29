@@ -2,6 +2,9 @@ package 排序算法;
 
 import org.junit.Test;
 
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+
 public class quciksort {
     public void sort(int[] nums,int begin,int end){
        partition(nums,0,8);
@@ -53,7 +56,7 @@ public class quciksort {
         int pivot=end;
         int counter=begin; //记录位置
         for (int i=begin;i<end;i++){
-            if (array[i]<pivot) {
+            if (array[i]< pivot) {
                 swap(array,i,counter++);
             }
         }
