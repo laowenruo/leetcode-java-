@@ -5,7 +5,7 @@ import 剑指offer.中等题.TreeNode;
 import java.util.HashMap;
 
 public class offer02 {
-    public HashMap<Integer,Integer> map;
+    public HashMap<Integer,Integer> map=new HashMap<>();
     public int[] preorder;
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         this.preorder=preorder;
