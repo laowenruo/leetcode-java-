@@ -3,27 +3,36 @@ package leetcode题目;
 import org.junit.Test;
 
 public class leetcode92 {
-//    public ListNode reverseBetween(ListNode head, int left, int right) {
-//        ListNode dummy=new ListNode(-1);
-//        ListNode begin=null,end=null;
-//        ListNode pre=null,next=null;
-//        while (left>1||right>1){
-//            if (left==1){
-//                begin=head;
-//                pre=
-//            }
-//            if (right==1){
-//                end=head;
-//            }
-//            head=head.next;
-//            left--;
-//            right--;
-//        }
-//    }
-    @Test
-    public void testList(){
-        Integer a=300;
-        Integer b=300;
-        System.out.println(a==b);
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        ListNode dummy=new ListNode(-1);
+        dummy.next=head;
+        ListNode res=dummy;
+        for (int i=1;i<left;i++){
+            res=res.next;
+        }
+        //起点
+        ListNode node=res.next;
+        ListNode pre=null,temp=null;
+        for (int i=left;i<=right;i++){
+            temp=node.next;
+            node.next=pre;
+            pre=node;
+            node=temp;
+        }
+        res.next.next=temp;
+        node.next=pre;
+        return res.next;
+    }
+    public static ListNode reverse(ListNode head){
+        ListNode temp;
+        ListNode pre=null;
+        while (head!=null){
+            temp=head.next;
+            head.next=null;
+            head.next=pre;
+            pre=head;
+            head=temp;
+        }
+        return pre;
     }
 }

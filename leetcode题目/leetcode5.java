@@ -32,24 +32,24 @@ public class leetcode5 {
         }
         return s.substring(maxBegin,maxEnd+1);
     }
-    public String longestPalindrome1(String s) {
+    public String longestPalindrome2(String s) {
         if (s==null||s.length()<2){
             return s;
         }
-        int strLen=s.length();
+        int n=s.length();
         char[] chars = s.toCharArray();
-        boolean[][] dp=new boolean[strLen][strLen];
-        int maxBegin = 0,maxEnd = 0;
-        int count=1;
-        for (int i=1;i<strLen;i++){
+        boolean[][] flag=new boolean[n][n];
+        int maxBegin = 0;
+        int maxEnd=0;
+        int counter=1;
+        for (int i=1;i<n;i++){
             for (int j=0;j<i;j++){
-                if (chars[i]==chars[j]&&(i-j<=2||dp[i+1][j-1])){
-                    dp[i][j]=true;
-                    int temp=i-j+1;
-                    if (temp>count){
-                        count=temp;
-                        maxBegin=i;
-                        maxEnd=j;
+                if (chars[i]==chars[j]&&(i-j<=2||flag[j+1][i-1])){
+                    flag[j][i]=true;
+                    if (i-j+1>counter){
+                        counter=i-j+1;
+                        maxBegin=j;
+                        maxEnd=i;
                     }
                 }
             }
