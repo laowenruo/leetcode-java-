@@ -18,12 +18,22 @@ import javahomework.TreeNode;
  * }
  */
 public class leetcode226 {
-    public TreeNode invertTree(TreeNode root) {
+    public TreeNode invertTree1(TreeNode root) {
           if (root==null) return null;
-          TreeNode left=invertTree(root.left);
-          TreeNode right=invertTree(root.right);
+          TreeNode left=invertTree1(root.left);
+          TreeNode right=invertTree1(root.right);
           root.left=right;
           root.right=left;
           return root;
+    }
+    public TreeNode invertTree(TreeNode root){
+        if (root==null){
+            return null;
+        }
+        TreeNode left=invertTree(root.right);
+        TreeNode right=invertTree(root.left);
+        root.left=right;
+        root.right=left;
+        return root;
     }
 }

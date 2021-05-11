@@ -19,14 +19,29 @@ public class leetcode101 {
 //        }
 //        return true;
 //    }
-public boolean isSymmetric1(TreeNode root) {   //递归
-    if (root==null) return true;
-    return cmp(root.left,root.right);
-}
-public boolean cmp(TreeNode node1,TreeNode node2){
-    if (node1==null&&node2==null) return true;
-    if (node1==null||node2==null||node1.val!=node2.val) return false;
-    return cmp(node1.left,node2.right)&&cmp(node1.right,node2.left);
-}
-
+//public boolean isSymmetric1(TreeNode root) {   //递归
+//    if (root==null) return true;
+//    return cmp(root.left,root.right);
+//}
+//public boolean cmp(TreeNode node1,TreeNode node2){
+//    if (node1==null&&node2==null) return true;
+//    if (node1==null||node2==null||node1.val!=node2.val) return false;
+//    return cmp(node1.left,node2.right)&&cmp(node1.right,node2.left);
+//}
+    public boolean isSymmetric(TreeNode root){
+        if (root==null){
+            return false;
+        }
+        boolean cmp = cmp(root.left, root.right);
+        return cmp;
+    }
+    public boolean cmp(TreeNode root1,TreeNode root2){
+        if (root1==null&&root2==null){
+            return true;
+        }
+        if (root1==null||root2==null||root1.val!= root2.val){
+            return false;
+        }
+        return cmp(root1.left,root2.right)&&cmp(root1.right, root2.left);
+    }
 }

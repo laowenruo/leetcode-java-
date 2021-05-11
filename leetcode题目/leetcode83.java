@@ -1,5 +1,7 @@
 package leetcode题目;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashSet;
 
 public class leetcode83 {
@@ -29,5 +31,23 @@ public class leetcode83 {
             else head=head.next;
         }
         return node;
+    }
+    public ListNode deleteDuplicates1(ListNode head){
+        Deque<ListNode> stack=new ArrayDeque<>();
+        if (head==null){
+            return null;
+        }
+        stack.push(head);
+        head=head.next;
+        while (head!=null){
+            if (stack.peek().val==head.val){
+                stack.peek().next=head.next;
+            }
+            else {
+                stack.push(head);
+            }
+            head=head.next;
+        }
+        return stack.peekFirst();
     }
 }
