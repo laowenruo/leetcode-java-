@@ -1,9 +1,9 @@
 package leetcode题目;
 import java.util.ArrayList;
+import java.util.Stack;
 
 
-
-  class ListNode {
+class ListNode {
       int val;
       ListNode next;
       ListNode() {}
@@ -52,6 +52,21 @@ class leetcode234 {
             head=temp;
         }
         return  newNode;
+    }
+    public boolean isPalindrome2(ListNode head) {
+        ListNode tempNode=head;
+        Stack<ListNode> stack=new Stack<>();
+        while (tempNode!=null){
+            stack.push(tempNode);
+            tempNode=tempNode.next;
+        }
+        while (head!=null){
+            if (head.val!=stack.pop().val){
+               return false;
+            }
+            head=head.next;
+        }
+        return true;
     }
 
 }

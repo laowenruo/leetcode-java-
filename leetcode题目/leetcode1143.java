@@ -20,5 +20,27 @@ public class leetcode1143 {
         }
         return dp[m][n];
     }
-
+    public int longestCommonSubsequence1(String text1, String text2){
+        if (text1==null||text2==null){
+            return 0;
+        }
+        char[] chars = text1.toCharArray();
+        char[] chars1 = text2.toCharArray();
+        int n= chars.length;
+        int m= chars1.length;
+        int[][] dp=new int[n+1][m+1];
+        int max=0;
+        for (int i=1;i<=n;i++){
+            for (int j=1;j<=n;j++){
+                if (chars[i-1]==chars[j-1]){
+                    dp[i][j]=dp[i-1][j-1]+1;
+                }
+                else {
+                    dp[i][j]=Math.max(dp[i][j-1],dp[i-1][j]);
+                }
+                max=Math.max(dp[i][j],max);
+            }
+        }
+        return max;
+    }
 }

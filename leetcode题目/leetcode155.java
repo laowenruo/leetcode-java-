@@ -1,27 +1,30 @@
 package leetcode题目;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 public class leetcode155 {
     class MinStack {
-
-        private int min = Integer.MAX_VALUE;
-        private Stack<Integer> stack;
+        Deque<Integer> stack;
+        int min=Integer.MAX_VALUE;
         /** initialize your data structure here. */
         public MinStack() {
-            stack = new Stack<>();
+            stack=new ArrayDeque<>();
         }
-        public void push(int x) {
-            if(min >= x){
+
+        public void push(int val) {
+            if (min>val){
                 stack.push(min);
-                min = x;
+                min=val;
             }
-            stack.push(x);
+            stack.push(val);
         }
 
         public void pop() {
-            if(stack.pop() == min){
-                min = stack.pop();
+            Integer pop = stack.pop();
+            if (pop==min){
+                min=stack.pop();
             }
         }
 
@@ -33,4 +36,13 @@ public class leetcode155 {
             return min;
         }
     }
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(val);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
 }

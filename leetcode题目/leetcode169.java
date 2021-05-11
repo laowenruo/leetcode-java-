@@ -1,6 +1,8 @@
 package leetcode题目;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.HashMap;
 
 public class leetcode169 {
@@ -25,6 +27,19 @@ public class leetcode169 {
         public int majorityElement1(int[] nums) {
             Arrays.sort(nums);
             return nums[nums.length / 2];
+        }
+        public int majorityElement2(int[] nums){
+            Deque<Integer> stack=new ArrayDeque<>();
+            for (int i=0;i< nums.length;i++){
+                if (!stack.isEmpty()&&nums[i]!=stack.peek()){
+                    stack.pop();
+                    continue;
+                }
+                else {
+                    stack.push(nums[i]);
+                }
+            }
+            return stack.peek();
         }
     }
 }
