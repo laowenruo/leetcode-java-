@@ -1,6 +1,6 @@
 package leetcode题目;
 
-import java.util.LinkedList;
+import java.util.*;
 
 public class leetcode239 {
         public int[] maxSlidingWindow(int[] nums, int k) {
@@ -27,4 +27,4 @@ public class leetcode239 {
             }
             return result;
         }
-}
+  }
