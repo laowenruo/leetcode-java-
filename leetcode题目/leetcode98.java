@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class leetcode98 {
+    int pre=Integer.MIN_VALUE;
     public boolean flag=true;
     public Queue<Integer> queue=new LinkedList();
     public boolean isValidBST(TreeNode root) {
@@ -29,5 +30,18 @@ public class leetcode98 {
         }
         def(root.left);
 
+    }
+    public boolean isValidBST1(TreeNode root){
+        if (root==null){
+            return true;
+        }
+        if (!isValidBST1(root.left)){
+            return false;
+        }
+        if (root.val<=pre){
+            return false;
+        }
+        pre=root.val;
+        return isValidBST1(root.right);
     }
 }

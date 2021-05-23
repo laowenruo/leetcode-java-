@@ -19,7 +19,7 @@ public class leetcode129 {
      *     }
      * }
      */
-    class Solution {
+    static class Solution {
         static int sum;
         public int sumNumbers(TreeNode root) {
             sum = 0;
@@ -27,7 +27,9 @@ public class leetcode129 {
             return sum;
         }
         public static void  childSum(int val, TreeNode root) {
-            if(root == null) return;
+            if(root == null) {
+                return;
+            }
             int k = (val * 10 + root.val) ;
             if(root.left == null && root.right == null) {
                 sum += k;

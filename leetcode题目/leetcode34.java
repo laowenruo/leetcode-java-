@@ -31,5 +31,35 @@ public class leetcode34 {
         }
         return -1;
     }
-
+    public int[] searchRange1(int[] nums, int target){
+        int[] result=new int[]{-1,-1};
+        int index=-1;
+        int i=0,j=nums.length-1;
+        //二分法寻找下标
+        while (i<j){
+            int mid=(i+j)/2;
+            if (nums[mid]==target){
+                index=mid;
+                break;
+            }
+            else if (nums[mid]<target){
+                i=mid+1;
+            }
+            else {
+                j=mid-1;
+            }
+        }
+        if (index!=-1){
+            i=j=index;
+            while (i>=0&&nums[i]==target){
+                i--;
+            }
+            while (j<= nums.length-1&&nums[j]==target){
+                j++;
+            }
+            result[0]=i+1;
+            result[1]=j-1;
+        }
+        return result;
+    }
 }
