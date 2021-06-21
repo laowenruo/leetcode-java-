@@ -3,7 +3,6 @@ package pratice.one.one;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
-import java.util.function.Consumer;
 
 public class test {
     private static final int CAPACITY=5;
@@ -17,11 +16,11 @@ public class test {
         Thread consumer2 =new Consumer("C-2",queue,CAPACITY);
         Thread consumer3 =new Consumer("C-3",queue,CAPACITY);
         producer1.start();
-        producer2.start();
-        producer3.start();
+//        producer2.start();
+//        producer3.start();
         consumer1.start();
-        consumer2.start();
-        consumer3.start();
+//        consumer2.start();
+//        consumer3.start();
     }
     public static class Producer extends Thread{
         private Queue<Integer> queue;
